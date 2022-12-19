@@ -10,6 +10,12 @@ const lecturers = new mongoose.Schema({
     },
     specialization: {
         type: String
+    },
+    picExt: {
+        type: String
+    },
+    fileExt: {
+        type: String
     }
 })
 
