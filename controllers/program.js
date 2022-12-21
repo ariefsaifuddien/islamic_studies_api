@@ -42,7 +42,7 @@ export const postProgram = async (req, res) => {
 }
 
 export const getPrograms = async (req, res) => {
-    return await Program.find({}).then(result => {
+    return await Program.find({}).sort("desc").then(result => {
         res.status(200).json({
             status: 200,
             message: "Successfully fetched!",

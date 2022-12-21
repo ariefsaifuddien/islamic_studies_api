@@ -5,6 +5,8 @@ import db from "./utils/db.js"
 import { lecturerRoute } from './routes/lecturer.js'
 import { programRoute } from './routes/program.js'
 import { downloadRoute } from './routes/download.js'
+import { aboutRoute } from './routes/about.js'
+import { adsRoute } from './routes/ads.js'
 
 const app = express()
 const port = process.env.PORT || 3300
@@ -15,6 +17,8 @@ app.use(express.json())
 app.use("/api", lecturerRoute)
 app.use("/api", programRoute)
 app.use("/api", downloadRoute)
+app.use("/api", aboutRoute)
+app.use("/api", adsRoute)
 
 app.use('/', (req, res) => {
     res.status(404).json({
