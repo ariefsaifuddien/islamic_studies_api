@@ -8,7 +8,7 @@ import { downloadRoute } from './routes/download.js'
 import { aboutRoute } from './routes/about.js'
 import { adsRoute } from './routes/ads.js'
 
-const app = express()
+export const app = express()
 const port = process.env.PORT || 3300
 
 db();
@@ -28,4 +28,3 @@ app.use('/', (req, res) => {
 })
 
 app.listen(port, () => console.log(`Server running on http://localhost:${port}`))
-
