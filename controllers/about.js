@@ -1,4 +1,4 @@
-import About from "../models/About";
+import About from "../models/About.js";
 
 export const postAbout = async (req, res) => {
     const { visions, mission, values } = req.body
@@ -25,7 +25,7 @@ export const getAbout = async (req, res) => {
     return await About.find({}).toArray().then(result =>
         res.status(200).json({
             status: 200,
-            message: "Successfully posted!",
+            message: "Successfully fetched!",
             data: result
         })
     ).catch(err => {
@@ -37,3 +37,18 @@ export const getAbout = async (req, res) => {
     })
 }
 
+export const deleteAbout = async (req, res) => {
+    return await About.findOneAndDelete({ _id: 0 }).then(result => {
+        res.status(200).json({
+            status: 200,
+            message: "Successfully deleted!",
+            data: result
+        })
+    }).catch(err => {
+        res.status(500).json({
+            status: 500,
+            message: "Error!",
+            error: err
+        })
+    })
+}
