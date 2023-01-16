@@ -1,16 +1,17 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose"
 
 const fee = new mongoose.Schema({
-    conditions: {
-        type: [String],
-        required: true
-    },
-    pounds: {
-        type: Number
-    },
-    dollars: {
-        type: Number
-    }
-})
+  name: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  pound: {
+    type: Number
+  },
+  dollar: {
+    type: Number
+  }
+}, { timestamps: true })
 
-export default mongoose.model("fees", fee);
+export default mongoose.model("fees", fee)

@@ -1,19 +1,13 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose"
 
 const about = new mongoose.Schema({
-    _id: {
-        type: Number,
-        required: true
-    },
-    visions: {
-        type: [String]
-    },
-    mission: {
-        type: [String]
-    },
-    values: {
-        type: [String]
-    }
-})
+  category: {
+    type: String,
+    required: true
+  },
+  mission: {
+    type: [String]
+  }
+}, { timestamps: true })
 
-export default mongoose.model("about", about);
+export default mongoose.model("about", about)

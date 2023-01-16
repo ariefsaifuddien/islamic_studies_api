@@ -1,10 +1,9 @@
-import about from "../models/about.js"
+import tasjeel from "../models/tasjeel.js"
 
-export const postAbout = async (req, res) => {
-  const { category, mission } = req.body
-  const doc = new about()
-  doc.category = category
-  doc.mission.push(...mission)
+export const postTasjeel = async (req, res) => {
+  const { sharat } = req.body
+  const doc = new tasjeel()
+  doc.sharat = sharat
   return await doc.save().then(result => {
     res.status(200).json({
       status: 200,
@@ -20,8 +19,8 @@ export const postAbout = async (req, res) => {
   })
 }
 
-export const getAbout = async (req, res) => {
-  return await about.find().then(result =>
+export const getTasjeel = async (req, res) => {
+  return await tasjeel.find().then(result =>
     res.status(200).json({
       status: 200,
       message: "ظهرت بنجاح",
@@ -36,8 +35,8 @@ export const getAbout = async (req, res) => {
   })
 }
 
-export const deleteAbout = async (req, res) => {
-  return await about.findOneAndDelete({ _id: req.params.id }).then(result => {
+export const deleteTasjeel = async (req, res) => {
+  return await tasjeel.findOneAndDelete({ _id: req.params.id }).then(result => {
     res.status(200).json({
       status: 200,
       message: "حذفت بنجاح",
