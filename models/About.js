@@ -5,8 +5,8 @@ const about = new mongoose.Schema({
     type: String,
     required: true
   },
-  mission: {
-    type: [String]
+  point: {
+    type: String
   }
 }, { timestamps: true })
 

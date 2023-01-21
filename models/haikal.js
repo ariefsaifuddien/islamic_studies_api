@@ -5,6 +5,9 @@ const haikal = new mongoose.Schema({
     type: Number,
     required: true
   },
+  position: {
+    type: String
+  },
   description: {
     type: String,
     required: true

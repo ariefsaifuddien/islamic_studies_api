@@ -1,10 +1,10 @@
 import about from "../models/about.js"
 
 export const postAbout = async (req, res) => {
-  const { category, mission } = req.body
+  const { category, point } = req.body
   const doc = new about()
   doc.category = category
-  doc.mission.push(...mission)
+  doc.point = point
   return await doc.save().then(result => {
     res.status(200).json({
       status: 200,

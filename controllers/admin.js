@@ -21,7 +21,7 @@ export const addAdmin = async (req, res) => {
       return admins.save().then(data => {
         res.status(201).json({
           status: 201,
-          message: 'أنت مسجل كمشررف',
+          message: 'أنت مسجل كمشرف',
           data
         })
       }).catch(err => {
