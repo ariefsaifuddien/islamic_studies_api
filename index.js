@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import cors from "cors"
 import express from "express"
-import db from "./utils/db.js"
+import database from "./utils/db.js"
 import { adminRouter } from './routes/admin.js'
 import { visitRouter } from './routes/visit.js'
 import { feeRoute } from './routes/fees.js'
@@ -13,7 +13,7 @@ import { mawadRoute } from './routes/mawad.js'
 const app = express()
 const port = process.env.PORT || 3300
 
-db()
+database()
 app.use(cors())
 app.use(express.json())
 
