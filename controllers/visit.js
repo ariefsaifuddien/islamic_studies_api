@@ -26,7 +26,7 @@ export const getVisitor = async (req, res) => {
     res.status(200).json({
       status: 200,
       message: 'ظهرت بتمام',
-      data: counts[0]?.count
+      data: counts
     })
   }).catch(err => {
     res.status(500).json({
