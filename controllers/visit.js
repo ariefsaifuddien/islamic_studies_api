@@ -3,7 +3,7 @@ import visit from "../models/visit.js"
 export const addVisitor = async (req, res) => {
   const { count } = req.body
 
-  const counts = new visit({ count: 0 })
+  const counts = new visit({ count: 1 })
 
   await visit.find().then(c => {
     if (!c[0]) {
@@ -26,7 +26,7 @@ export const getVisitor = async (req, res) => {
     res.status(200).json({
       status: 200,
       message: 'ظهرت بتمام',
-      data: counts
+      data: counts[0]?.count
     })
   }).catch(err => {
     res.status(500).json({
