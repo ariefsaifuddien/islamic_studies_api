@@ -1,8 +1,8 @@
-import Fees from "../models/fees.js"
+import fees from "../models/fees.js"
 
 export const postFees = async (req, res) => {
   const { name, pound, dollar } = req.body
-  const fee = new Fees()
+  const fee = new fees()
   fee.name = name
   fee.pound = pound
   fee.dollar = dollar
@@ -22,7 +22,7 @@ export const postFees = async (req, res) => {
 }
 
 export const getFees = async (req, res) => {
-  return await Fees.find().then(result => {
+  return await fees.find().then(result => {
     res.status(200).json({
       status: 200,
       message: "ظهرت بتمام",
@@ -38,7 +38,7 @@ export const getFees = async (req, res) => {
 }
 
 export const delFee = async (req, res) => {
-  return await Fees.deleteOne({ _id: req.params.id }).then(result => {
+  return await fees.deleteOne({ _id: req.params.id }).then(result => {
     res.status(200).json({
       status: 200,
       message: "حذفت بتمام"
