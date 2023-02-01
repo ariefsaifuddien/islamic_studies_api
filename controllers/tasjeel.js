@@ -1,9 +1,10 @@
 import tasjeel from "../models/tasjeel.js"
 
 export const postTasjeel = async (req, res) => {
-  const { sharat } = req.body
+  const { sharat, category } = req.body
   const doc = new tasjeel()
   doc.sharat = sharat
+  doc.category = category
   return await doc.save().then(result => {
     res.status(200).json({
       status: 200,
